@@ -36,7 +36,7 @@ class NewThreadCreator implements Runnable {
 
 
 /**
- * Driver program for creating child threadd
+ * Driver program for creating child thread
  */
 public class NewThread {
     public static void main(String... args){
