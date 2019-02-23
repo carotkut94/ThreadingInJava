@@ -33,6 +33,10 @@ class NewThreadByExtension extends Thread {
 
 public class ThreadExtensionDemo {
     public static void main(String... args) {
+        /**
+         * Creation  of multiple thread,
+         * with name
+         */
         new NewThreadByExtension("One");
         new NewThreadByExtension("Two");
         new NewThreadByExtension("Three");
