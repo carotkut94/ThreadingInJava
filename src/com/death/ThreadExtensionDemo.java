@@ -11,29 +11,32 @@ package com.death;
 
 class NewThreadByExtension extends Thread {
 
-    NewThreadByExtension() {
-        super("Child Thread");
-        System.out.println("Child Thread " + this);
+    NewThreadByExtension(String name) {
+        super(name);
+        System.out.println(name + this);
         start();
     }
 
     public void run() {
         try {
             for (int i = 5; i > 0; i--) {
-                System.out.println("Child Thread " + i);
+                System.out.println(currentThread().getName()+ " Thread " + i);
                 Thread.sleep(1000);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
-            System.out.println("Child Thread Interrupted");
+            System.out.println(currentThread().getName()+" Thread Interrupted");
         }
-        System.out.println("Exiting child thread");
+        System.out.println("Exiting "+currentThread().getName()+" thread");
     }
 }
 
 public class ThreadExtensionDemo {
     public static void main(String... args) {
-        new NewThreadByExtension();
+        new NewThreadByExtension("One");
+        new NewThreadByExtension("Two");
+        new NewThreadByExtension("Three");
+        new NewThreadByExtension("Four");
 
         try {
             for (int i = 5; i > 0; i--) {
